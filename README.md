@@ -1,12 +1,11 @@
 <div align="center">
   
-# 🎛️ **Analytical Tuning for Second-Order Non-Minimum Phase Systems** 🎛️
+# **Analytical Tuning for Second-Order Non-Minimum Phase Systems** 
 
 by Erick Moreno-Negrete, Islam Boussaada, Silviu-Iulian Niculescu & César-Fernando Méndez-Barrios
 
 [![Paper](https://img.shields.io/badge/Published_in-IEEE_Access-blue.svg)](https://ieeeaccess.ieee.org/)
 [![Platform](https://img.shields.io/badge/Made_for-MATLAB-orange.svg)](https://www.mathworks.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
 
 </div>
 

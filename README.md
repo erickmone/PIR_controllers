@@ -1,33 +1,49 @@
-# PIR_controllers
-This repository is part of the paper:
+<div align="center">
+  
+# 🎛️ PIR & PR Controllers
+**Analytical Tuning for Second-Order Non-Minimum Phase Systems**
 
- *The Partial Pole Placement for Second-Order Non-Minimum Phase Systems via Proportional-Integral-Retarded Controllers* by E. Moreno-Negrete, Islam Boussaada, A. Ramirez, & C.-F. Mendez-Barrios (to be on L-CSS-IEEE)
- 
- Recognizing that the controller parameters algebraic functions are *big enough* to attach in the paper, here we attach the MATLAB functions for PIR, and PR controllers. The user's have to look at the running test section as a demo to get the numerical value of controllers' parameters.
+[![Paper](https://img.shields.io/badge/Published_in-IEEE_Access-blue.svg)](https://ieeeaccess.ieee.org/)
+[![Platform](https://img.shields.io/badge/Made_for-MATLAB-orange.svg)](https://www.mathworks.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
 
+</div>
 
-## Running Tests
+---
 
-To run the function for the PIR controller, the user must run the following command
+## 📖 About This Repository
 
-```bash
-  [h, kp, ki, kr] = f_PIR_controller(s0, a, b, c, z);
-```
+This repository serves as the official supplementary code material for the research article:
 
-To run the function for the PR controller, the user must run the following command
+> **"Analytical Tuning of PIR Controllers for Second-Order Non-Minimum Phase Systems"**  
+> *by Erick Moreno-Negrete, Islam Boussaada, Silviu-Iulian Niculescu, & César-Fernando Méndez-Barrios.*  
+> 📰 **To be published in:** *IEEE Access*
 
-```bash
-  [h, kp, kr] = f_PR_controller(s0, a, b, c, z);
-```
+Recognizing that the algebraic functions defining the controller parameters are too extensive to be fully printed within the manuscript, this repository provides the complete **MATLAB functions** for both **PIR** and **PR** controllers.
 
+---
 
+## ⚙️ Prerequisites
 
-## Feedback
+Before running the examples, you must install the **TDS-Control** software package. This is strictly required for the proper execution of the delay-based control algorithms used in these examples.
 
-If you have any feedback, please reach out to us at emone@ieee.org
+🔗 **Download here:** [TDS-Control on GitLab](https://gitlab.kuleuven.be/u0011378/tds-control)
 
+---
 
-## Acknowledgements
+## 📊 Numerical Examples
 
- - E. Moreno-Negrete thanks CONAHCYT for his PhD scholarship number (CVU: 990591)
+To maintain strict consistency with the original manuscript, this repository includes **4 numerical examples**. These examples directly correspond to the special *Numerical Examples* section detailed in our paper. 
 
+We highly recommend users explore the `Running Tests` section as a practical demo to observe how numerical values for the controllers' parameters are properly obtained.
+
+---
+
+## 🚀 Usage & Running Tests
+
+You can easily compute the controller parameters by running the following MATLAB functions:
+
+### 🔹 PIR Controller
+To calculate the parameters for the Proportional-Integral-Retarded (PIR) controller, run:
+```matlab
+[h, kp, ki, kr] = f_PIR_controller(s0, a, b, c, z);

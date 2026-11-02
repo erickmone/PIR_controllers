@@ -13,37 +13,57 @@
 
 ## 📖 About This Repository
 
-This repository serves as the official supplementary code material for the research article:
+This repository is part of the research paper:
 
 > **"Analytical Tuning of PIR Controllers for Second-Order Non-Minimum Phase Systems"**  
 > *by Erick Moreno-Negrete, Islam Boussaada, Silviu-Iulian Niculescu, & César-Fernando Méndez-Barrios.*  
 > 📰 **To be published in:** *IEEE Access*
 
-Recognizing that the algebraic functions defining the controller parameters are too extensive to be fully printed within the manuscript, this repository provides the complete **MATLAB functions** for both **PIR** and **PR** controllers.
+Recognizing that the algebraic functions defining the controller parameters are big enough to attach in the paper, this repository provides the complete **MATLAB functions** for both **PIR** and **PR** controllers.
 
 ---
 
 ## ⚙️ Prerequisites
 
-Before running the examples, you must install the **TDS-Control** software package. This is strictly required for the proper execution of the delay-based control algorithms used in these examples.
+To correctly execute the examples provided in this repository, previous installation of the **TDS-Control** software package is required. 
 
-🔗 **Download here:** [TDS-Control on GitLab](https://gitlab.kuleuven.be/u0011378/tds-control)
+🔗 **Download and install here:** [TDS-Control on GitLab](https://gitlab.kuleuven.be/u0011378/tds-control)
 
 ---
 
 ## 📊 Numerical Examples
 
-To maintain strict consistency with the original manuscript, this repository includes **4 numerical examples**. These examples directly correspond to the special *Numerical Examples* section detailed in our paper. 
+To maintain strict consistency with the original manuscript, this repository contains **4 numerical examples** that correspond directly to the special numerical examples section detailed in our paper. 
 
-We highly recommend users explore the `Running Tests` section as a practical demo to observe how numerical values for the controllers' parameters are properly obtained.
+We highly recommend users explore the `Running Tests` section as a practical demo to obtain the numerical values of the controllers' parameters.
 
 ---
 
-## 🚀 Usage & Running Tests
+## 🚀 Running Tests
 
-You can easily compute the controller parameters by running the following MATLAB functions:
+To run the function for the **PIR controller**, the user must execute the following command:
 
-### 🔹 PIR Controller
-To calculate the parameters for the Proportional-Integral-Retarded (PIR) controller, run:
-```matlab
+```bash
 [h, kp, ki, kr] = f_PIR_controller(s0, a, b, c, z);
+```
+
+To run the function for the **PR controller**, the user must execute the following command:
+
+```bash
+[h, kp, kr] = f_PR_controller(s0, a, b, c, z);
+```
+
+---
+
+## 📬 Feedback
+
+If you have any feedback or require further assistance, please reach out to us at:  
+📧 **[emone@ieee.org](mailto:emone@ieee.org)**
+
+---
+
+## 🙏 Acknowledgements
+
+* **Fernando Méndez-Barrios** is supported by **SECIHTI--México**, under the grant *Ciencia Básica y de Frontera* (CBF2023--2024--2696), and by *"Proyectos para fortalecer la formación de recursos humanos en investigación, desarrollo tecnológico e innovación"* through the Consejo Potosino de Ciencia y Tecnología.
+* **Erick Moreno-Negrete** gratefully acknowledges the financial support of Prof. Islam Boussaada through the **SPECTRE project**.
+* The work of **Islam Boussaada and Silviu-Iulian Niculescu** is partially financially supported by a grant from the **"CNRS-Joint Research Programme in Africa (CNRS-Africa JRP)"** in the framework of the *"SPECTRE-EDP"* project, and by the Interdisciplinary Object H-CoDe of Paris-Saclay in the framework of the *"SPECTRE"* project.

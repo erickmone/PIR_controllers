@@ -179,9 +179,6 @@ ExperimentalCaseI/
 - the output-voltage figure of the three PR designs (PDF)
 - a table with `t_r`, `t_s`, `M_p`, `M_u`, `e_ss`, `v_min`, `v_max`, `Δv_pp` and IAE
 
-> [!NOTE]
-> The `PR*_seconds.csv` files contain the output-voltage waveforms extracted from the experimental records, with time converted to seconds (columns `Time_s`, `Voltage_V`). For the PR metrics, `t_r`, `t_s`, `M_p`, `e_ss` and IAE are computed from a 20 ms moving average of the waveform, whereas `v_min`, `v_max` and `Δv_pp` come from the unfiltered waveform.
-
 ### Case II: Nonideal model versus PLECS
 
 Nonideal operating point, duty-to-output model, PIR tuning with quantized digital delay, and comparison against the PLECS switching model.
@@ -197,9 +194,6 @@ Run `ExperimentalCaseII.m` to obtain:
 - the operating point, canonical parameters and controller gains in the Command Window
 - the performance table (model vs PLECS), including RMSE, MAE and NRMSE
 - the comparison figure → `PLECS_comparison.pdf`
-
-> [!NOTE]
-> The Case II time-domain metrics (rise time, settling time, overshoot, steady-state error and IAE) are computed from the **PLECS switching-model simulation**, averaged over one switching period. They are not extracted from the oscilloscope capture.
 
 ### Metric definitions
 

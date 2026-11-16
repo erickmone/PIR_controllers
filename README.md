@@ -147,23 +147,40 @@ Two experimental cases are included, each in its own folder with its script and 
 
 ### Case I: Output-voltage regulation
 
-Comparison of the modified PIR controller (`s0 = -1250, -1500, -2000`) against a filtered PID (`s0 = -1000`).
+Two scripts, one per controller family. Both read the CSV files stored in the same folder.
+
+| Script | What it does |
+|---|---|
+| `ExperimentalCaseI_PIR.m` | Modified PIR (`s0 = -1250, -1500, -2000`) against a filtered PID (`s0 = -1000`): time-aligned output voltage, duty-cycle comparison and performance tables |
+| `ExperimentalCaseI_PR.m` | PR controller (`s0 = -2000, -2050, -2100`): output-voltage response and performance table |
 
 ```text
 ExperimentalCaseI/
-├── ExperimentalCaseI.m
+├── ExperimentalCaseI_PIR.m
+├── ExperimentalCaseI_PR.m
 ├── ExperimentalCaseI_Control_All.csv
 ├── ExperimentalCaseI_Voltage_PIRm1250.csv
 ├── ExperimentalCaseI_Voltage_PIRm1500.csv
 ├── ExperimentalCaseI_Voltage_PIRm2000.csv
-└── ExperimentalCaseI_Voltage_fPID1000.csv
+├── ExperimentalCaseI_Voltage_fPID1000.csv
+├── PR2000_seconds.csv
+├── PR2050_seconds.csv
+└── PR2100_seconds.csv
 ```
 
-Run `ExperimentalCaseI.m` to obtain:
+**`ExperimentalCaseI_PIR.m`** produces
 
 - the time-aligned output-voltage responses → `ExperimentalCaseI_OutputVoltage.pdf`
 - the duty-cycle comparison → `ExperimentalCaseI_DutyCycle.pdf`
 - tables with rise time, settling time, overshoot, undershoot, steady-state error, ripple, IAE and duty-cycle effort metrics
+
+**`ExperimentalCaseI_PR.m`** produces
+
+- the output-voltage figure of the three PR designs (PDF)
+- a table with `t_r`, `t_s`, `M_p`, `M_u`, `e_ss`, `v_min`, `v_max`, `Δv_pp` and IAE
+
+> [!NOTE]
+> The `PR*_seconds.csv` files contain the output-voltage waveforms extracted from the experimental records, with time converted to seconds (columns `Time_s`, `Voltage_V`). For the PR metrics, `t_r`, `t_s`, `M_p`, `e_ss` and IAE are computed from a 20 ms moving average of the waveform, whereas `v_min`, `v_max` and `Δv_pp` come from the unfiltered waveform.
 
 ### Case II: Nonideal model versus PLECS
 
@@ -204,8 +221,8 @@ PIR_controllers/
 ├── f_PIR_controller.m        # PIR tuning (h, kp, ki, kr)
 ├── f_PR_controller.m         # PR tuning (h, kp, kr)
 ├── f_SDP_controller.m        # SDP controller function
-├── ExperimentalCaseI/        # Case I: script + CSV data
-├── ExperimentalCaseII/       # Case II: script + PLECS data
+├── ExperimentalCaseI/        # Case I: PIR and PR scripts + CSV data
+├── ExperimentalCaseII/       # Case II: PLECS comparison script + data
 └── README.md
 ```
 

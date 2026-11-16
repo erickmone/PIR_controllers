@@ -75,7 +75,7 @@ text(ax,0.78,0.89,'Reference','Units','normalized','Interpreter','latex', ...
 
 xlabel(ax,'Time [s]');
 ylabel(ax,'$v_o(t)$ [V]');
-xlim(ax,[0 0.20]);
+xlim(ax,[0 0.90]);
 ylim(ax,[10 28]);
 legend(ax,'Location','southeast','FontSize',6,'Box','on');
 
